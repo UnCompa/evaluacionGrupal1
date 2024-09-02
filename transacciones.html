@@ -59,18 +59,18 @@
             <div class="superior">
                 <div class="titulo">TRANSACCIONES</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">NUMERO DE CUENTA</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="lblNumeroCuenta" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />
+                    <input type="button" value="BUSCAR" onclick="ejecutarBusqueda();"/>
                 </div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 2</div>
+                    <div class="etiquetaTexto">MONTO</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="lblMonto" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
@@ -78,7 +78,9 @@
                     <input type="button" value="RETIRAR" id="lblRetirar"/>
                     
                 </div>
-              
+                <div class="inferior" id="lblTabla">
+                    
+                </div>
             </div>
         </div>
         <div class="contenido" id="divMovimientos">

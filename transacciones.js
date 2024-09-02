@@ -9,6 +9,8 @@ cargar=function(){
     ocultarComponente("divMovimientos");
     deshabilitarComponente("lblDepositar");
     deshabilitarComponente("lblRetirar");
+    deshabilitarComponente("lblMonto");
+    mostrarTransacciones();
 }
 
 /*
@@ -36,6 +38,16 @@ ejecutarBusqueda=function(){
     //toma el numero de cuenta de la caja de texto
     //invoca a buscarCuenta y guarda el resultado en una variable
     //Si el resultado es diferente de null, muestra en pantalla, caso contrario muestra un alert
+    let numeroDeCuenta=recuperarTexto("lblNumeroCuenta");
+    let cuentaEncontrado=buscarCuenta(numeroDeCuenta);
+    if(cuentaEncontrado!=null){
+        mostrarTransacciones(numeroDeCuenta);
+        habilitarComponente("lblMonto");
+        habilitarComponente("lblDepositar");
+        habilitarComponente("lblRetirar");
+    }else{
+        alert("CUENTA INEXISTENTE");
+    }
 }
 
 depositar=function(numeroCuenta,monto){
@@ -65,4 +77,27 @@ retirar=function(numeroCuenta,monto){
     //Si el saldo es suficiente,al saldo actual de la cuenta afectada, le resta el monto que recibe como parámetro
     //Si el saldo no es suficiente, muestra un alert SALDO INSUFICIENTE
     //Si logra retirar muestra un mensaje TRANSACCION EXITOSA y muestra en pantalla el nuevo saldo de la cuenta
+}
+
+//Para mostrar en pantalla los datos
+mostrarTransacciones=function(numeroCuenta){
+    let cmpTabla=document.getElementById("lblTabla");
+    let contenidoTabla="<table><tr>"+
+    "<th>CEDULA</th>"+
+    "<th>NOMBRES COMPLETOS</th>"+
+    "<th>SALDO </th>"+
+    "</tr>"
+    let elementoCuenta;
+    for(let i=0;i<cuentas.length;i++){
+        elementoCuenta=cuentas[i]
+        if(elementoCuenta.numeroCuenta==numeroCuenta){
+            contenidoTabla+=
+            "<tr><td>"+elementoCuenta.cedula+"</td>"+
+            "<td>"+elementoCuenta.nombre+" "+elementoCuenta.apellido+"</td>"+
+            "<td>"+elementoCuenta.saldo+"</td></tr>"
+        }
+    }
+    contenidoTabla+="</table>"
+    cmpTabla.innerHTML=contenidoTabla;
+
 }
