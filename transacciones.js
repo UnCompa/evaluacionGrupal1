@@ -13,10 +13,6 @@ cargar=function(){
     mostrarTransacciones();
 }
 
-/*
-    Busca la cuenta en el arreglo en función del número de cuenta,
-    si existe retorna el objeto cuenta, caso contrario retorna null. 
-*/
 buscarCuenta=function(numeroCuenta){
     let cuenta=null;
     let elementoCliente;
@@ -35,9 +31,6 @@ buscarCuenta=function(numeroCuenta){
 }
 
 ejecutarBusqueda=function(){
-    //toma el numero de cuenta de la caja de texto
-    //invoca a buscarCuenta y guarda el resultado en una variable
-    //Si el resultado es diferente de null, muestra en pantalla, caso contrario muestra un alert
     let numeroDeCuenta=recuperarTexto("lblNumeroCuenta");
     let cuentaEncontrado=buscarCuenta(numeroDeCuenta);
     if(cuentaEncontrado!=null){
@@ -52,19 +45,12 @@ ejecutarBusqueda=function(){
 
 depositar=function(numeroCuenta,monto){
     let cuentaAfectada;
-    //invoca a buscarCuenta, guarda el resultado en la variable cuentaAfectada;
-    //Al saldo actual de la cuenta afectada, le suma el monto que recibe como parámetro
     cuentaAfectada=buscarCuenta(numeroCuenta);
     cuentaAfectada.saldo=cuentaAfectada.saldo+monto
     return cuentaAfectada;
 }
 
 ejecutarDeposito=function(){
-    //Toma el numero de cuenta ingresado en la caja de texto
-    //Toma el monto ingresado en la caja de texto
-    //invoca a depositar
-    //Muestra un mensaje TRANSACCION EXITOSA
-    //Muestra en pantalla el nuevo saldo de la cuenta
     let numeroDeCuenta=recuperarTexto("lblNumeroCuenta");
     let monto=recuperarInt("lblMonto");
     let depositadoMonto=depositar(numeroDeCuenta,monto);
@@ -75,11 +61,20 @@ ejecutarDeposito=function(){
 
 retirar=function(numeroCuenta,monto){
     let cuentaAfectada;
-    //invoca a buscarCuenta, guarda el resultado en la variable cuentaAfectada;
-    //Valida si la cuenta tiene el saldo suficiente para retirar el monto
-    //Si el saldo es suficiente,al saldo actual de la cuenta afectada, le resta el monto que recibe como parámetro
-    //Si el saldo no es suficiente, muestra un alert SALDO INSUFICIENTE
-    //Si logra retirar muestra un mensaje TRANSACCION EXITOSA y muestra en pantalla el nuevo saldo de la cuenta
+    cuentaAfectada=buscarCuenta(numeroCuenta);
+    if(cuentaAfectada.saldo>monto){
+        cuentaAfectada.saldo=cuentaAfectada.saldo-monto
+        alert("TRANSACCION EXITOSA")
+        return cuentaAfectada;
+    }else{
+        alert("SALDO INSUFICIENTE")
+    }
+}
+ejecutarRetiro=function(){
+    let numeroDeCuenta=recuperarTexto("lblNumeroCuenta");
+    let monto=recuperarInt("lblMonto");
+    let retiroMonto=retirar(numeroDeCuenta,monto);
+    mostrarTransacciones(retiroMonto.numeroCuenta);
 }
 
 //Para mostrar en pantalla los datos
