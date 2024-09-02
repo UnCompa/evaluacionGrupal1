@@ -16,7 +16,19 @@ cargar=function(){
     si existe retorna el objeto cuenta, caso contrario retorna null. 
 */
 buscarCuenta=function(numeroCuenta){
-
+    let cuenta=null;
+    let elementoCliente;
+    for(let i=0;i<cuentas.length;i++){
+        elementoCliente=cuentas[i];
+        if(elementoCliente.numeroCuenta==numeroCuenta){
+            cuenta=elementoCliente;
+        }
+    }
+    if(cuenta!=null){
+        return cuenta;
+    }else{
+        return cuenta;
+    }
 
 }
 
