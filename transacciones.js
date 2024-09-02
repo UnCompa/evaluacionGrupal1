@@ -7,7 +7,8 @@ cargar=function(){
     mostrarComponente("divTransacciones");
     ocultarComponente("divCuentas");
     ocultarComponente("divMovimientos");
-    
+    deshabilitarComponente("lblDepositar");
+    deshabilitarComponente("lblRetirar");
 }
 
 /*
