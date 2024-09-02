@@ -80,7 +80,7 @@ ejecutarRetiro=function(){
 //Para mostrar en pantalla los datos
 mostrarTransacciones=function(numeroCuenta){
     let cmpTabla=document.getElementById("lblTabla");
-    let contenidoTabla="<table><tr>"+
+    let contenidoTabla="<table id=\"contenidoTabla\"><tr>"+
     "<th>CEDULA</th>"+
     "<th>NOMBRES COMPLETOS</th>"+
     "<th>SALDO </th>"+
