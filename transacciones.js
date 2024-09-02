@@ -54,6 +54,9 @@ depositar=function(numeroCuenta,monto){
     let cuentaAfectada;
     //invoca a buscarCuenta, guarda el resultado en la variable cuentaAfectada;
     //Al saldo actual de la cuenta afectada, le suma el monto que recibe como parámetro
+    cuentaAfectada=buscarCuenta(numeroCuenta);
+    cuentaAfectada.saldo=cuentaAfectada.saldo+monto
+    return cuentaAfectada;
 }
 
 ejecutarDeposito=function(){
@@ -62,13 +65,13 @@ ejecutarDeposito=function(){
     //invoca a depositar
     //Muestra un mensaje TRANSACCION EXITOSA
     //Muestra en pantalla el nuevo saldo de la cuenta
+    let numeroDeCuenta=recuperarTexto("lblNumeroCuenta");
+    let monto=recuperarInt("lblMonto");
+    let depositadoMonto=depositar(numeroDeCuenta,monto);
+    alert("TRANSACCION EXITOSA")
+    mostrarTransacciones(depositadoMonto.numeroCuenta);
 }
 
-depositar=function(numeroCuenta,monto){
-    let cuentaAfectada;
-    //invoca a buscarCuenta, guarda el resultado en la variable cuentaAfectada;
-    //Al saldo actual de la cuenta afectada, le suma el monto que recibe como parámetro
-}
 
 retirar=function(numeroCuenta,monto){
     let cuentaAfectada;
