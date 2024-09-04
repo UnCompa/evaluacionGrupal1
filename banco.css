@@ -1,117 +1,176 @@
-body{
-   
-}
-.principal{
-    display: flex;
-    
-}
-.menu{
-    display: flex;
-    flex:1;
-   
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
-    
-}
-.contenido{
-    display: flex;
-    flex:5;
-   
-    align-items: center;
-    flex-direction: column;
-}
-.contenedorLogo{
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    align-items: center;
-}
-.contenedorInfoGrupo{
-    display: flex;
-    flex: 1;
-   
-    flex-direction: column;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+body {
+  background-image: linear-gradient(45deg, #3437fa, rgb(103, 245, 255), #fff);
+  background-size: cover;
+  min-height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 900;
 }
 
+.principal {
+  display: flex;
+}
+.menu {
+  display: flex;
+  flex: 1;
 
-.contenedorBotones{
-    display: flex;
-    flex:4;
-    flex-direction: column;
-    justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
 }
-.boton{
-    margin-top: 10px;
-}
-.contenedorTexto{
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: center;
-    flex:1;
+.contenido {
+  display: flex;
+  flex: 5;
 
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  
+  align-items: center;
+  flex-direction: column;
 }
-.contenedorAcciones{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex:1;
+.contenedorLogo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
 }
-.etiquetaTexto{
-    display: flex;
-    flex:1;
-    justify-content: flex-end;
-    margin-right: 10px;
+.contenedorInfoGrupo {
+  display: flex;
+  flex: 1;
 
+  flex-direction: column;
 }
 
-.cajaTexto{
-    display: flex;
-    flex:1;
-    justify-content: flex-start;
+.contenedorBotones {
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+  justify-content: center;
 }
-.superior{
-    margin-top: 40px;
-    display: flex;
-    flex:1;
-    flex-direction: column;
+.boton {
+  margin-top: 10px;
 }
-.inferior{
-    display: flex;
-    flex:1;
-    justify-content: center;
-    margin-top: 30px;
+.contenedorTexto {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: center;
+  flex: 1;
+
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.titulo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.contenedorAcciones {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.etiquetaTexto {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 10px;
 }
 
-#contenidoTabla{
-    border-radius: 5px 5px 0 0;
-    border-collapse:collapse;
-    font-size: 14px;
-    font-family:  Arial, Helvetica, sans-serif;
-    min-width: 525px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0.3, 0.25);
+.cajaTexto {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+}
+.superior {
+  margin-top: 40px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.inferior {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+  gap: 1em;
+}
+.titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#contenidoTabla {
+  border-radius: 5px 5px 0 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 525px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0.3, 0.25);
 }
 #contenidoTabla th {
-    border: #cacaca 1px solid ;
-    color: #000000;
-    text-align:left;
-    font-weight: bold;
-    padding: 12px 15px;
+  border: #cacaca 1px solid;
+  color: #000000;
+  text-align: left;
+  font-weight: bold;
+  padding: 12px 15px;
 }
-#contenidoTabla td{
-    padding: 12px 15px;
-    border: #cacaca 1px solid ;
+#contenidoTabla td {
+  padding: 12px 15px;
+  border: #cacaca 1px solid;
+}
+#tablaMovimientos table {
+  border-radius: 5px 5px 0 0;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  min-width: 525px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0.3, 0.25);
+}
+#tablaMovimientos table th {
+  border: #cacaca 1px solid;
+  color: #000000;
+  text-align: left;
+  font-weight: bold;
+  padding: 12px 15px;
+}
+#tablaMovimientos table td {
+  padding: 12px 15px;
+  border: #cacaca 1px solid;
+}
+input {
+  border: none;
+  padding: 0.2em 0.5em;
+  border-radius: 6px;
+}
+input[type="button"] {
+  border: none;
+  padding: 0.5em 0.8em;
+  background-color: #d8d8d8;
+  color: black;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px #0002;
+  font-weight: 400;
+  transition: all 0.2s ease-out;
+  animation: aparecer 1s ease;
+}
+
+input[type="button"]:hover {
+  background-color: #fafafa;
+}
+input[type="button"]:active {
+  background-color: #3437fa;
+  color: white;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+table {
+  background-color: white;
 }
