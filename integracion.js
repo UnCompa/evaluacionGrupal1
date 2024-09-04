@@ -165,6 +165,13 @@ ejecutarDeposito = function () {
   let depositadoMonto = depositar(numeroDeCuenta, monto);
   alert("TRANSACCION EXITOSA");
   mostrarTransacciones(depositadoMonto.numeroCuenta);
+  let movimiento={ 
+    numeroCuenta: depositadoMonto.numeroCuenta,
+    monto:depositadoMonto.monto,
+    tipo: "C"
+  };
+  movimientos.push(movimiento);
+
 };
 
 retirar = function (numeroCuenta, monto) {
@@ -173,6 +180,12 @@ retirar = function (numeroCuenta, monto) {
   if (cuentaAfectada.saldo > monto) {
     cuentaAfectada.saldo = cuentaAfectada.saldo - monto;
     alert("TRANSACCION EXITOSA");
+    let movimiento={
+      numeroCuenta:cuentaAfectada.numeroCuenta,
+      monto:cuentaAfectada.monto,
+      tipo:"D"
+    };
+    movimientos.push(movimiento);
     return cuentaAfectada;
   } else {
     alert("SALDO INSUFICIENTE");
