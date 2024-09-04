@@ -165,13 +165,13 @@ ejecutarDeposito = function () {
   let depositadoMonto = depositar(numeroDeCuenta, monto);
   alert("TRANSACCION EXITOSA");
   mostrarTransacciones(depositadoMonto.numeroCuenta);
-  let movimiento={ 
+  let movimiento = {
     numeroCuenta: depositadoMonto.numeroCuenta,
-    monto:depositadoMonto.monto,
-    tipo: "C"
+    monto: depositadoMonto.saldo,
+    tipo: "C",
   };
-  movimientos.push(movimiento);
 
+  movimientos.push(movimiento);
 };
 
 retirar = function (numeroCuenta, monto) {
@@ -180,10 +180,10 @@ retirar = function (numeroCuenta, monto) {
   if (cuentaAfectada.saldo > monto) {
     cuentaAfectada.saldo = cuentaAfectada.saldo - monto;
     alert("TRANSACCION EXITOSA");
-    let movimiento={
-      numeroCuenta:cuentaAfectada.numeroCuenta,
-      monto:cuentaAfectada.monto,
-      tipo:"D"
+    let movimiento = {
+      numeroCuenta: cuentaAfectada.numeroCuenta,
+      monto: cuentaAfectada.saldo,
+      tipo: "D",
     };
     movimientos.push(movimiento);
     return cuentaAfectada;
